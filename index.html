@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Grade 8 ICT Lesson: Conditional Statements (IF...THEN &amp; IF...THEN...ELSE in Pseudocode and Python) with Variables &amp; Input Revision.">
+    <title>IF &amp; IF/ELSE Statements (Selection) | Grade 8 ICT Future Explorers</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Ambient Background Blobs -->
+    <div class="bg-blobs" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-badge">Grade 8</span>
+                <span class="brand-title">Future Explorers <span class="highlight">ICT</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#revision">Revision</a></li>
+                <li><a href="#conditionals">Conditions</a></li>
+                <li><a href="#operators">Operators</a></li>
+                <li><a href="#pseudocode">Pseudocode</a></li>
+                <li><a href="#python">Python IF &amp; ELSE</a></li>
+                <li><a href="#code-lab">Code Lab</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="unit-pill">
+                <span class="pulse-dot"></span>
+                Unit 1 &bull; Computational Thinking &amp; Programming
+            </div>
+            <h1 class="hero-title">
+                Mastering <span class="gradient-text">IF &amp; IF/ELSE Statements</span>
+            </h1>
+            <p class="hero-subtitle">
+                Learn how computers make decisions using both <strong>single-branch (IF / THEN)</strong> and
+                <strong>two-way dual-branch (IF / THEN / ELSE)</strong> selection in Pseudocode and Python!
+            </p>
+
+            <!-- Learning Goals Ribbon -->
+            <div class="learning-goals-card glass-panel">
+                <div class="goals-header">
+                    <span class="goals-icon">🎯</span>
+                    <h3>Lesson Learning Goals</h3>
+                </div>
+                <div class="goals-grid">
+                    <div class="goal-item">
+                        <span class="goal-number">1</span>
+                        <p>Understand <strong>one-way (IF)</strong> &amp; <strong>two-way (IF/ELSE)</strong> selection logic.</p>
+                    </div>
+                    <div class="goal-item">
+                        <span class="goal-number">2</span>
+                        <p>Understand <strong>conditions</strong> &amp; <strong>comparison operators</strong>.</p>
+                    </div>
+                    <div class="goal-item">
+                        <span class="goal-number">3</span>
+                        <p>Define <strong>IF / THEN</strong> &amp; <strong>IF / THEN / ELSE</strong> in pseudocode with <code>ENDIF</code>.</p>
+                    </div>
+                    <div class="goal-item">
+                        <span class="goal-number">4</span>
+                        <p>Translate <strong>IF &amp; ELSE</strong> into Python syntax (colons &amp; indentation rules).</p>
+                    </div>
+                    <div class="goal-item">
+                        <span class="goal-number">5</span>
+                        <p><strong>Write, predict &amp; test</strong> live Python single and dual-branch if/else programs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#revision" class="start-btn">
+                <span>Start Warm-Up Revision</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- ======================================================== -->
+        <!-- SECTION 0: REVISION (VARIABLES & INPUT)                 -->
+        <!-- ======================================================== -->
+        <section id="revision" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-cyan">Warm-Up Revision</span>
+                <span class="textbook-ref">Ref: Topic 1.1 &amp; 1.5</span>
+            </div>
+            <h2 class="section-heading">Variables &amp; User Input Revision</h2>
+            <p class="section-lead">
+                Before a computer can make decisions, it needs to store information and listen to the user. Let's
+                refresh our memory on <strong>Variables</strong>, <strong>Assignment</strong>, and
+                <strong>Input</strong>!
+            </p>
+
+            <div class="two-col-grid">
+                <!-- Concept Card 1: Variables & Identifier -->
+                <div class="concept-card glass-panel">
+                    <div class="card-top">
+                        <div class="icon-bubble cyan-glow">📦</div>
+                        <div>
+                            <h3>What is a Variable?</h3>
+                            <p class="card-sub">A named storage box in computer memory</p>
+                        </div>
+                    </div>
+                    <p>
+                        A <strong>variable</strong> is a named location in a computer's memory that can store <em>one
+                            item of data</em>. Storing data in a variable is called <strong>assignment</strong> (using
+                        <code>=</code> in Python or <code>&leftarrow;</code> in pseudocode).
+                    </p>
+                    <div class="variable-box-visual">
+                        <div class="box-identifier">
+                            <span class="badge-label">Identifier (Name)</span>
+                            <code>playerScore</code>
+                        </div>
+                        <div class="box-arrow">&leftarrow;</div>
+                        <div class="box-content">
+                            <span class="badge-label">Stored Data</span>
+                            <span class="box-val" id="memoryPreviewVal">25</span>
+                        </div>
+                    </div>
+                    <div class="tip-box">
+                        <strong>Naming Rules:</strong> One word without spaces, cannot start with a number, and cannot
+                        be a reserved Python keyword (like <code>if</code>, <code>print</code>, <code>input</code>).
+                    </div>
+                </div>
+
+                <!-- Concept Card 2: User Input & Type Casting -->
+                <div class="concept-card glass-panel">
+                    <div class="card-top">
+                        <div class="icon-bubble purple-glow">⌨️</div>
+                        <div>
+                            <h3>Getting User Input</h3>
+                            <p class="card-sub">Communicating with the outside world</p>
+                        </div>
+                    </div>
+                    <p>
+                        <strong>Input</strong> is data the user enters into the program.
+                        In Python, we use the <code>input()</code> function.
+                    </p>
+                    <div class="critical-callout">
+                        <div class="callout-title">⚠️ Crucial Rule for IF Statements:</div>
+                        <p>
+                            By default, <code>input()</code> always returns a <strong>String (text)</strong>! If you
+                            want to compare numbers (like age or marks), you must <strong>cast</strong> it to an
+                            <code>int()</code>:
+                        </p>
+                        <div class="code-contrast">
+                            <div class="contrast-item bad">
+                                <span class="tag-status">Text string:</span>
+                                <code>name = input("Enter name: ")</code>
+                            </div>
+                            <div class="contrast-item good">
+                                <span class="tag-status">Whole number:</span>
+                                <code>age = int(input("Enter age: "))</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Revision Widget: Live Memory & Input Inspector -->
+            <div class="interactive-lab glass-panel" style="margin-top: 2rem;">
+                <div class="lab-header">
+                    <div class="lab-title">
+                        <span class="pulse-indicator"></span>
+                        <h4>Interactive Warm-up: The Memory &amp; Type Casting Lab</h4>
+                    </div>
+                    <span class="lab-pill">Try it yourself</span>
+                </div>
+                <div class="lab-body">
+                    <div class="lab-controls">
+                        <div class="control-group">
+                            <label for="revVarName">Variable Identifier (Name):</label>
+                            <input type="text" id="revVarName" value="userAge" class="styled-input">
+                        </div>
+                        <div class="control-group">
+                            <label for="revVarValue">User Input Value:</label>
+                            <input type="text" id="revVarValue" value="14" class="styled-input">
+                        </div>
+                        <div class="control-group">
+                            <label>Data Casting Type:</label>
+                            <div class="radio-pill-group">
+                                <label class="radio-pill">
+                                    <input type="radio" name="castType" value="int" checked>
+                                    <span>int() [Integer]</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="castType" value="str">
+                                    <span>str() [String]</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lab-output-view">
+                        <div class="view-column">
+                            <span class="column-title">Pseudocode Equivalent</span>
+                            <pre class="code-display"><code id="revPseudocodeOut">INPUT userAge</code></pre>
+                        </div>
+                        <div class="view-column">
+                            <span class="column-title">Python Code Generated</span>
+                            <pre
+                                class="code-display"><code id="revPythonOut">userAge = int(input("Enter userAge: "))</code></pre>
+                        </div>
+                        <div class="view-column">
+                            <span class="column-title">Result in Memory</span>
+                            <div class="memory-card" id="revMemoryCard">
+                                <div class="mem-type" id="revMemType">Type: Integer</div>
+                                <div class="mem-value" id="revMemVal">14</div>
+                                <div class="mem-note" id="revMemNote">Ready for numeric comparison (&gt;, &lt;, ==)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 1: UNDERSTAND CONDITIONAL STATEMENTS            -->
+        <!-- ======================================================== -->
+        <section id="conditionals" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-purple">Learning Goal 1</span>
+                <span class="textbook-ref">Ref: Topic 1.2, p. 28-34</span>
+            </div>
+            <h2 class="section-heading">Understanding Conditional Selection (IF &amp; IF/ELSE)</h2>
+            <p class="section-lead">
+                Every day, you make decisions based on conditions. Computers do exactly the same thing using
+                <strong>Selection</strong>! In programming, selection comes in two main forms:
+                <strong>One-Way Selection (Single IF)</strong> and <strong>Two-Way Selection (IF / ELSE)</strong>.
+            </p>
+
+            <div class="analogy-banner glass-panel">
+                <div class="analogy-content">
+                    <div class="speech-quote">
+                        <span class="quote-mark">“</span>
+                        <p><strong>1-Way Selection:</strong> <strong>If</strong> someone has a gluten allergy, <strong>then</strong> provide a gluten-free meal.</p>
+                        <p class="quote-sub"><strong>2-Way Selection:</strong> <strong>If</strong> it is raining, <strong>then</strong> take an umbrella, <strong>ELSE</strong> wear sunglasses &amp; sunscreen! ☀️</p>
+                    </div>
+                    <div class="analogy-explanation">
+                        <p><strong>The Key Difference:</strong> With a single <code>IF</code>, there is no alternative plan &mdash; if the condition is False, the special action is simply <em>skipped</em>. With <code>IF / ELSE</code>, the computer is given a guaranteed alternative action for when the condition is False!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single vs Dual Branch Rule Breakdown -->
+            <div class="rule-spotlight glass-panel">
+                <div class="spotlight-header">
+                    <span class="star-badge">🌟</span>
+                    <h3>Core Selection Concepts: 1-Way vs 2-Way</h3>
+                </div>
+                <div class="selection-types-grid">
+                    <!-- Type 1: One-Way Selection -->
+                    <div class="selection-type-card">
+                        <div class="type-header">
+                            <span class="type-title">1. One-Way Selection (Pure IF)</span>
+                            <span class="type-badge badge-single">Single Branch</span>
+                        </div>
+                        <p class="type-desc">
+                            Executes a special block only when the condition is <strong>True</strong>. There is NO fallback!
+                        </p>
+                        <div class="type-branches">
+                            <div class="branch-mini-card">
+                                <span class="branch-mini-title title-true">✅ Condition is TRUE</span>
+                                <p>Statements inside the IF block run immediately.</p>
+                            </div>
+                            <div class="branch-mini-card">
+                                <span class="branch-mini-title title-false">⏭️ Condition is FALSE</span>
+                                <p>Inner code is skipped completely. Execution continues below.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Type 2: Two-Way Selection -->
+                    <div class="selection-type-card">
+                        <div class="type-header">
+                            <span class="type-title">2. Two-Way Selection (IF / ELSE)</span>
+                            <span class="type-badge badge-dual">Dual Branch</span>
+                        </div>
+                        <p class="type-desc">
+                            Offers two distinct pathways: one for <strong>True</strong> and another guaranteed path for <strong>False</strong>.
+                        </p>
+                        <div class="type-branches">
+                            <div class="branch-mini-card">
+                                <span class="branch-mini-title title-true">✅ Condition is TRUE</span>
+                                <p>The <strong>IF</strong> block statements run. The ELSE block is skipped.</p>
+                            </div>
+                            <div class="branch-mini-card">
+                                <span class="branch-mini-title title-false">🔄 Condition is FALSE</span>
+                                <p>The <strong>ELSE</strong> block statements run! (Guaranteed fallback).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Decision Gate Simulator -->
+            <div class="interactive-lab glass-panel" style="margin-top: 2rem;">
+                <div class="lab-header">
+                    <div class="lab-title">
+                        <span class="pulse-indicator"></span>
+                        <h4>Interactive Decision Gate: Single IF vs IF / ELSE Simulator</h4>
+                    </div>
+                    <span class="lab-pill">Live Simulation</span>
+                </div>
+                <div class="lab-body">
+                    <div class="gate-grid">
+                        <div class="gate-controls">
+                            <!-- Mode Switcher -->
+                            <div class="gate-mode-selector">
+                                <button class="gate-mode-btn active" id="btnGateSingle">
+                                    <span>1️⃣ Single IF (1-Way)</span>
+                                </button>
+                                <button class="gate-mode-btn" id="btnGateDual">
+                                    <span>2️⃣ IF / ELSE (2-Way)</span>
+                                </button>
+                            </div>
+
+                            <p>Test the condition by changing the weather:</p>
+                            <div class="weather-selector">
+                                <button class="weather-btn active" data-weather="raining" id="btnRaining">
+                                    <span class="weather-emoji">🌧️</span>
+                                    <span>isRaining = True</span>
+                                </button>
+                                <button class="weather-btn" data-weather="sunny" id="btnSunny">
+                                    <span class="weather-emoji">☀️</span>
+                                    <span>isRaining = False</span>
+                                </button>
+                            </div>
+                            <div class="gate-code-snippet">
+                                <pre id="gateCodeSnippet"><code><span class="py-keyword">if</span> isRaining == <span class="py-bool">True</span>:
+    <span class="py-func">print</span>(<span class="py-str">"Take an umbrella! ☂️"</span>)
+<span class="py-func">print</span>(<span class="py-str">"Walk outside to school! 🎒"</span>)</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="gate-animation">
+                            <div class="gate-visualizer">
+                                <div class="gate-node" id="nodeStart">Start</div>
+                                <div class="gate-connector" id="conn1"></div>
+                                <div class="gate-diamond" id="nodeDiamond">
+                                    <span>isRaining == True ?</span>
+                                    <div class="diamond-status" id="diamondStatus">TRUE</div>
+                                </div>
+                                <div class="gate-branches">
+                                    <div class="branch-true" id="branchTrue">
+                                        <div class="branch-label">Yes (True)</div>
+                                        <div class="branch-action-box" id="actionUmbrella">
+                                            <span>☂️ Take an umbrella!</span>
+                                        </div>
+                                    </div>
+                                    <div class="branch-false" id="branchFalse">
+                                        <div class="branch-label">No (False)</div>
+                                        <div class="branch-skip-line" id="branchSkipLine">
+                                            <span>[Skip &amp; Continue]</span>
+                                        </div>
+                                        <div class="branch-else-box" id="actionSunglasses" style="display: none;">
+                                            <span>🕶️ Wear sunglasses &amp; sunscreen!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gate-connector" id="conn2"></div>
+                                <div class="gate-node end-node" id="nodeEnd">Walk outside to school! 🎒</div>
+                            </div>
+
+                            <div class="gate-console">
+                                <div class="console-label">Computer Screen Output:</div>
+                                <div class="console-screen" id="gateConsoleScreen">
+                                    <div class="console-line text-cyan">&gt; Take an umbrella! ☂️</div>
+                                    <div class="console-line text-white">&gt; Walk outside to school! 🎒</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 2: CONDITIONS & COMPARISON OPERATORS            -->
+        <!-- ======================================================== -->
+        <section id="operators" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-emerald">Learning Goal 2</span>
+                <span class="textbook-ref">Ref: Topic 1.2 p. 29 &amp; Topic 1.4 p. 72</span>
+            </div>
+            <h2 class="section-heading">Conditions &amp; Comparison Operators</h2>
+            <p class="section-lead">
+                A <strong>condition</strong> is a comparison test that can result in only one of two Boolean values:
+                <strong>True</strong> or <strong>False</strong>.
+            </p>
+
+            <!-- Table of Comparison Operators -->
+            <div class="table-container glass-panel">
+                <table class="operator-table">
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                            <th>Python Syntax</th>
+                            <th>Example</th>
+                            <th>Evaluation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="op-badge op-eq">==</span></td>
+                            <td><strong>Equal to</strong> (checks if both sides match)</td>
+                            <td><code>==</code> <em>(Two equal signs!)</em></td>
+                            <td><code>10 == 10</code></td>
+                            <td><span class="pill-true">True</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="op-badge op-ne">!=</span></td>
+                            <td><strong>Not equal to</strong></td>
+                            <td><code>!=</code></td>
+                            <td><code>5 != 2</code></td>
+                            <td><span class="pill-true">True</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="op-badge op-gt">&gt;</span></td>
+                            <td><strong>Greater than</strong></td>
+                            <td><code>&gt;</code></td>
+                            <td><code>20 &gt; 19</code></td>
+                            <td><span class="pill-true">True</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="op-badge op-lt">&lt;</span></td>
+                            <td><strong>Less than</strong></td>
+                            <td><code>&lt;</code></td>
+                            <td><code>1 &lt; 2</code></td>
+                            <td><span class="pill-true">True</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="op-badge op-gte">&gt;=</span></td>
+                            <td><strong>Greater than or equal to</strong></td>
+                            <td><code>&gt;=</code></td>
+                            <td><code>50 &gt;= 50</code></td>
+                            <td><span class="pill-true">True</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="op-badge op-lte">&lt;=</span></td>
+                            <td><strong>Less than or equal to</strong></td>
+                            <td><code>&lt;=</code></td>
+                            <td><code>82 &lt;= 99</code></td>
+                            <td><span class="pill-true">True</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Caution: = vs == -->
+            <div class="warning-banner glass-panel">
+                <div class="warning-icon">🚨</div>
+                <div class="warning-text">
+                    <h4>Top Grade 8 Mistake: <code>=</code> vs <code>==</code></h4>
+                    <p>
+                        A single equals sign <code>=</code> is for <strong>ASSIGNMENT</strong> (storing a value in a
+                        variable): <code>score = 100</code>.<br>
+                        A double equals sign <code>==</code> is for <strong>COMPARISON</strong> (asking "Are these two
+                        equal?"): <code>score == 100</code>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Comparison Operators Live Playground -->
+            <div class="interactive-lab glass-panel" style="margin-top: 2rem;">
+                <div class="lab-header">
+                    <div class="lab-title">
+                        <span class="pulse-indicator"></span>
+                        <h4>Live Operator Sandbox: Test Any Comparison</h4>
+                    </div>
+                    <span class="lab-pill">Interactive</span>
+                </div>
+                <div class="lab-body">
+                    <p class="sandbox-intro">
+                        Type two values and pick an operator. See the exact Boolean result the computer calculates!
+                    </p>
+                    <div class="sandbox-flex">
+                        <div class="sandbox-input-box">
+                            <label for="opLeftVal">Left Value:</label>
+                            <input type="text" id="opLeftVal" value="15" class="styled-input">
+                        </div>
+
+                        <div class="sandbox-operator-box">
+                            <label for="opSelector">Operator:</label>
+                            <select id="opSelector" class="styled-select">
+                                <option value="==">== (Equal to)</option>
+                                <option value="!=">!= (Not equal to)</option>
+                                <option value=">" selected>&gt; (Greater than)</option>
+                                <option value="<">&lt; (Less than)</option>
+                                <option value=">=">&gt;= (Greater or equal)</option>
+                                <option value="<=">&lt;= (Less or equal)</option>
+                            </select>
+                        </div>
+
+                        <div class="sandbox-input-box">
+                            <label for="opRightVal">Right Value:</label>
+                            <input type="text" id="opRightVal" value="10" class="styled-input">
+                        </div>
+                    </div>
+
+                    <div class="sandbox-result-card" id="sandboxResultCard">
+                        <div class="result-formula" id="sandboxFormula">15 &gt; 10</div>
+                        <div class="result-badge true-glow" id="sandboxBadge">TRUE</div>
+                        <div class="result-reason" id="sandboxReason">
+                            Because 15 is strictly greater than 10.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 3: DEFINE IF/THEN IN PSEUDOCODE                 -->
+        <!-- ======================================================== -->
+        <section id="pseudocode" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-pink">Learning Goal 3</span>
+                <span class="textbook-ref">Ref: Topic 1.2, p. 30-34</span>
+            </div>
+            <h2 class="section-heading">IF / THEN &amp; IF / THEN / ELSE in Pseudocode</h2>
+            <p class="section-lead">
+                In pseudocode, selection statements tell us where the decision begins, which condition is tested, what
+                statements run when True, what statements run when False (<strong>ELSE</strong>), and where the decision
+                concludes (<strong>ENDIF</strong>).
+            </p>
+
+            <div class="pseudocode-structure-grid">
+                <!-- Structure 1: One-Way Selection -->
+                <div class="glass-panel structure-card">
+                    <div class="example-header">
+                        <span class="tag-book">Format 1: One-Way</span>
+                        <h3>Pure IF / THEN Format</h3>
+                    </div>
+                    <div class="pseudocode-display">
+                        <div class="line-row"><span class="pc-keyword">IF</span> <span
+                                class="pc-condition">condition</span> <span class="pc-keyword">THEN</span></div>
+                        <div class="line-row indent-1"><span class="pc-action">statements when True</span></div>
+                        <div class="line-row"><span class="pc-keyword">ENDIF</span></div>
+                    </div>
+                    <ul class="breakdown-list">
+                        <li><strong>IF &amp; THEN:</strong> Begins the selection statement and specifies the condition test.</li>
+                        <li><strong>Indentation:</strong> The statements inside are indented so we know they belong to the IF.</li>
+                        <li><strong>No ELSE:</strong> If condition is False, inner code is skipped completely.</li>
+                        <li><strong>ENDIF:</strong> Marks where the IF statement ends!</li>
+                    </ul>
+                </div>
+
+                <!-- Structure 2: Two-Way Selection -->
+                <div class="glass-panel structure-card">
+                    <div class="example-header">
+                        <span class="tag-book" style="background:rgba(245, 158, 11, 0.15); color:var(--amber);">Format 2: Two-Way</span>
+                        <h3>IF / THEN / ELSE Format</h3>
+                    </div>
+                    <div class="pseudocode-display">
+                        <div class="line-row"><span class="pc-keyword">IF</span> <span
+                                class="pc-condition">condition</span> <span class="pc-keyword">THEN</span></div>
+                        <div class="line-row indent-1"><span class="pc-action">statements when True</span></div>
+                        <div class="line-row"><span class="pc-keyword">ELSE</span></div>
+                        <div class="line-row indent-1"><span class="pc-action" style="color:var(--amber);">statements when False</span></div>
+                        <div class="line-row"><span class="pc-keyword">ENDIF</span></div>
+                    </div>
+                    <ul class="breakdown-list">
+                        <li><strong>ELSE:</strong> Executes when the condition is <strong>False</strong>. Notice: <em>No condition is written after ELSE!</em></li>
+                        <li><strong>Dual Indentation:</strong> Both the True statements and the False statements are indented.</li>
+                        <li><strong>Mutual Exclusion:</strong> Exactly ONE block executes, never both!</li>
+                        <li><strong>ENDIF:</strong> Both branches merge and continue here.</li>
+                    </ul>
+                </div>
+
+                <!-- Textbook Example 1: Single IF -->
+                <div class="glass-panel structure-card">
+                    <div class="example-header">
+                        <span class="tag-book">Booklet Example 1 (Page 31)</span>
+                        <h4>Single IF: Doubling Numbers Over 10</h4>
+                    </div>
+                    <p>Asks for a number. <strong>If</strong> greater than 10, doubles it. Otherwise skips:</p>
+                    <div class="code-block-stylish">
+                        <div class="code-bar">
+                            <span class="circle circle-red"></span>
+                            <span class="circle circle-yellow"></span>
+                            <span class="circle circle-green"></span>
+                            <span class="code-title">algorithm_double.pc</span>
+                        </div>
+                        <pre><code><span class="pc-keyword">OUTPUT</span> <span class="pc-str">"Enter a number"</span>
+<span class="pc-var">number</span> = <span class="pc-keyword">INPUT</span>
+<span class="pc-keyword">IF</span> <span class="pc-var">number</span> &gt; <span class="pc-val">10</span> <span class="pc-keyword">THEN</span>
+    <span class="pc-keyword">OUTPUT</span> <span class="pc-var">number</span> * <span class="pc-val">2</span>
+<span class="pc-keyword">ENDIF</span>
+<span class="pc-keyword">OUTPUT</span> <span class="pc-str">"Program complete"</span></code></pre>
+                    </div>
+                    <div class="trace-box">
+                        <p><strong>Trace input 15:</strong> 15 &gt; 10 is <em>True</em> &rarr; Outputs <code>30</code> &rarr; Outputs <code>"Program complete"</code>.</p>
+                        <p><strong>Trace input 4:</strong> 4 &gt; 10 is <em>False</em> &rarr; Skips multiplication! &rarr; Outputs <code>"Program complete"</code>.</p>
+                    </div>
+                </div>
+
+                <!-- Textbook Example 2: IF / ELSE -->
+                <div class="glass-panel structure-card">
+                    <div class="example-header">
+                        <span class="tag-book" style="background:rgba(245, 158, 11, 0.15); color:var(--amber);">Booklet Example 2 (Page 33)</span>
+                        <h4>IF / ELSE: Exam Pass or Fail Decision</h4>
+                    </div>
+                    <p>Asks for a student's score. Outputs <strong>Pass</strong> if &ge; 50, otherwise outputs <strong>Fail</strong>:</p>
+                    <div class="code-block-stylish">
+                        <div class="code-bar">
+                            <span class="circle circle-red"></span>
+                            <span class="circle circle-yellow"></span>
+                            <span class="circle circle-green"></span>
+                            <span class="code-title">algorithm_pass_fail.pc</span>
+                        </div>
+                        <pre><code><span class="pc-keyword">OUTPUT</span> <span class="pc-str">"Enter student mark"</span>
+<span class="pc-var">mark</span> = <span class="pc-keyword">INPUT</span>
+<span class="pc-keyword">IF</span> <span class="pc-var">mark</span> &gt;= <span class="pc-val">50</span> <span class="pc-keyword">THEN</span>
+    <span class="pc-keyword">OUTPUT</span> <span class="pc-str">"Status: PASS! 🎉"</span>
+<span class="pc-keyword">ELSE</span>
+    <span class="pc-keyword">OUTPUT</span> <span class="pc-str">"Status: FAIL. Retake! 📚"</span>
+<span class="pc-keyword">ENDIF</span>
+<span class="pc-keyword">OUTPUT</span> <span class="pc-str">"Grading complete"</span></code></pre>
+                    </div>
+                    <div class="trace-box">
+                        <p><strong>Trace input 75:</strong> 75 &ge; 50 is <em>True</em> &rarr; Outputs <code>"Status: PASS! 🎉"</code> &rarr; Outputs <code>"Grading complete"</code>.</p>
+                        <p><strong>Trace input 42:</strong> 42 &ge; 50 is <em>False</em> &rarr; Runs ELSE &rarr; Outputs <code>"Status: FAIL. Retake! 📚"</code> &rarr; Outputs <code>"Grading complete"</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flowchart vs Pseudocode Step-By-Step Explorer -->
+            <div class="interactive-lab glass-panel" style="margin-top: 2rem;">
+                <div class="lab-header">
+                    <div class="lab-title">
+                        <span class="pulse-indicator"></span>
+                        <h4>Flowchart &amp; Pseudocode Step-Through Inspector</h4>
+                    </div>
+                    <span class="lab-pill">Trace It!</span>
+                </div>
+                <div class="lab-body">
+                    <!-- Algorithm Switcher -->
+                    <div class="stepper-algo-selector">
+                        <button class="algo-pill-btn active" id="btnAlgoSingle" onclick="switchStepperAlgo('single')">
+                            <span>Algorithm 1: Single IF (Number &gt; 10)</span>
+                        </button>
+                        <button class="algo-pill-btn" id="btnAlgoDual" onclick="switchStepperAlgo('dual')">
+                            <span>Algorithm 2: IF / ELSE (Exam Mark &gt;= 50)</span>
+                        </button>
+                    </div>
+
+                    <div class="stepper-layout">
+                        <div class="stepper-controls">
+                            <label for="stepNumInput" id="stepperInputLabel">Test with input number:</label>
+                            <div class="num-quick-btns" id="stepperQuickBtns">
+                                <input type="number" id="stepNumInput" value="12" class="styled-input">
+                                <button class="quick-btn" onclick="setStepNum(15)">15 (&gt;10)</button>
+                                <button class="quick-btn" onclick="setStepNum(5)">5 (&lt;10)</button>
+                                <button class="quick-btn" onclick="setStepNum(10)">10 (not &gt;10)</button>
+                            </div>
+                            <button id="btnRunStepper" class="btn-primary" style="margin-top: 1rem; width: 100%;">
+                                <span>▶️ Trace Algorithm</span>
+                            </button>
+                            <div class="step-explanation-box" id="stepExplanationBox">
+                                Click "Trace Algorithm" to step through how the computer evaluates each line!
+                            </div>
+                        </div>
+
+                        <div class="stepper-diagram">
+                            <div class="flow-step" id="fs1">
+                                <div class="step-badge">1</div>
+                                <div class="step-content"><strong>INPUT number</strong> (value = <span
+                                        id="dispStepVal">12</span>)</div>
+                            </div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step diamond-step" id="fs2">
+                                <div class="step-badge">2</div>
+                                <div class="step-content"><strong>IF number &gt; 10 ?</strong> &rarr; <span
+                                        id="dispStepCond">Evaluating...</span></div>
+                            </div>
+                            <div class="flow-decision-split">
+                                <div class="branch-col true-col" id="colTrue">
+                                    <span class="col-tag">If True</span>
+                                    <div class="flow-step action-step" id="fs3">
+                                        <div class="step-badge">3</div>
+                                        <div class="step-content"><strong>OUTPUT number * 2</strong> (<span
+                                                id="dispStepCalc">24</span>)</div>
+                                    </div>
+                                </div>
+                                <div class="branch-col false-col" id="colFalse">
+                                    <span class="col-tag">If False</span>
+                                    <div class="flow-step skip-step" id="fsSkip">
+                                        <div class="step-badge">&empty;</div>
+                                        <div class="step-content"><strong>Skip inner code!</strong></div>
+                                    </div>
+                                    <div class="flow-step else-step" id="fsElse" style="display: none;">
+                                        <div class="step-badge">3b</div>
+                                        <div class="step-content"><strong>OUTPUT "Needs Retake! 📚"</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step" id="fs4">
+                                <div class="step-badge">4</div>
+                                <div class="step-content"><strong>ENDIF</strong> (Next statements continue)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 4: TRANSLATING IF/THEN INTO PYTHON              -->
+        <!-- ======================================================== -->
+        <section id="python" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-orange">Learning Goal 4</span>
+                <span class="textbook-ref">Ref: Topic 1.4, p. 73-77 &amp; Table 1.6</span>
+            </div>
+            <h2 class="section-heading">Translating IF &amp; IF / ELSE into Python</h2>
+            <p class="section-lead">
+                Moving from pseudocode to real Python code is easy once you understand Python's exact syntax rules for both
+                single <code>if</code> and dual-branch <code>if / else</code> structures!
+            </p>
+
+            <!-- Translation Matrix Table -->
+            <div class="translation-matrix-grid">
+                <div class="matrix-card glass-panel">
+                    <div class="matrix-head pseudocode-head">
+                        <span class="head-icon">📝</span>
+                        <h3>Pseudocode Feature</h3>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Keyword (Single IF):</span>
+                        <code>IF ... THEN</code>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Keyword (Alternative):</span>
+                        <code>ELSE</code>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Equality Check:</span>
+                        <code>=</code> or <code>==</code>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">How to mark end:</span>
+                        <code>ENDIF</code> keyword
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Input string:</span>
+                        <code>INPUT name</code>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Input number:</span>
+                        <code>INPUT score</code>
+                    </div>
+                </div>
+
+                <div class="matrix-arrow-col">
+                    <div class="arrow-circle">&rarr;</div>
+                    <span class="arrow-caption">Translates To</span>
+                </div>
+
+                <div class="matrix-card glass-panel">
+                    <div class="matrix-head python-head">
+                        <span class="head-icon">🐍</span>
+                        <h3>Python Syntax Rule</h3>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Keyword (Single IF):</span>
+                        <code>if condition:</code> <em>(lowercase + colon!)</em>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Keyword (Alternative):</span>
+                        <code>else:</code> <em>(lowercase + colon, NO condition!)</em>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Equality Check:</span>
+                        <code>==</code> <em>(Must be double equals!)</em>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">How to mark end:</span>
+                        <strong>Indentation!</strong> (No ENDIF, un-indent to finish)
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Input string:</span>
+                        <code>name = input("Enter name: ")</code>
+                    </div>
+                    <div class="matrix-row">
+                        <span class="matrix-label">Input number:</span>
+                        <code>score = int(input("Enter score: "))</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spotlight on Indentation, Colons, and ELSE -->
+            <div class="syntax-spotlights">
+                <div class="syntax-card glass-panel">
+                    <div class="syntax-icon">:</div>
+                    <div class="syntax-text">
+                        <h4>1. The Colon (:) is Mandatory</h4>
+                        <p>At the end of both your <code>if condition:</code> and your <code>else:</code> lines, you
+                            <strong>must</strong> include a colon. The colon signals Python that an indented code block
+                            follows!</p>
+                    </div>
+                </div>
+
+                <div class="syntax-card glass-panel">
+                    <div class="syntax-icon">&rarr;|</div>
+                    <div class="syntax-text">
+                        <h4>2. Indentation Defines the Blocks</h4>
+                        <p>Python has no <code>ENDIF</code>. Instead, any line indented by <strong>4 spaces</strong> (or
+                            1 Tab) belongs inside that specific block. Once code returns to the left margin, it runs
+                            unconditionally!</p>
+                    </div>
+                </div>
+
+                <div class="syntax-card glass-panel">
+                    <div class="syntax-icon" style="color:var(--ruby); background:rgba(239, 68, 68, 0.15);">⛔</div>
+                    <div class="syntax-text">
+                        <h4>3. The Golden Rule of else:</h4>
+                        <p>An <code>else:</code> statement <strong>NEVER takes a condition</strong>! Writing <code>else score &lt; 50:</code>
+                            is an immediate syntax error. <code>else:</code> automatically catches every False case!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive "Spot the Bug & Fix It" Mini Game (From Textbook Table 1.6) -->
+            <div class="interactive-lab glass-panel" style="margin-top: 2rem;">
+                <div class="lab-header">
+                    <div class="lab-title">
+                        <span class="pulse-indicator"></span>
+                        <h4>Bug Hunter: Fix Common Python IF &amp; ELSE Errors!</h4>
+                    </div>
+                    <span class="lab-pill">Textbook Table 1.6</span>
+                </div>
+                <div class="lab-body">
+                    <p class="sandbox-intro">
+                        Even the best programmers make mistakes! Click each broken line to identify the bug and apply
+                        the fix.
+                    </p>
+
+                    <div class="bug-hunt-container">
+                        <div class="bug-item" data-fixed="false" id="bugItem1">
+                            <div class="bug-code">
+                                <span class="bug-tag">Bug 1:</span>
+                                <code><span class="err-highlight">IF</span> score &gt;= 50:</code>
+                            </div>
+                            <div class="bug-desc">What is wrong with this line?</div>
+                            <div class="bug-options">
+                                <button class="bug-opt-btn" onclick="checkBug(1, false)">Needs double equals</button>
+                                <button class="bug-opt-btn" onclick="checkBug(1, true)">The command word 'if' must be in
+                                    lowercase!</button>
+                                <button class="bug-opt-btn" onclick="checkBug(1, false)">Missing quotes</button>
+                            </div>
+                            <div class="bug-feedback" id="bugFeedback1"></div>
+                        </div>
+
+                        <div class="bug-item" data-fixed="false" id="bugItem2">
+                            <div class="bug-code">
+                                <span class="bug-tag">Bug 2:</span>
+                                <code>if answer <span class="err-highlight">=</span> "purple":</code>
+                            </div>
+                            <div class="bug-desc">What is wrong with this line?</div>
+                            <div class="bug-options">
+                                <button class="bug-opt-btn" onclick="checkBug(2, true)">Comparison operator needs two
+                                    equals signs (==), not one (=)!</button>
+                                <button class="bug-opt-btn" onclick="checkBug(2, false)">Missing parenthesis</button>
+                                <button class="bug-opt-btn" onclick="checkBug(2, false)">Should be in uppercase</button>
+                            </div>
+                            <div class="bug-feedback" id="bugFeedback2"></div>
+                        </div>
+
+                        <div class="bug-item" data-fixed="false" id="bugItem3">
+                            <div class="bug-code">
+                                <span class="bug-tag">Bug 3:</span>
+                                <code>if age &gt;= 12<span class="err-highlight">&nbsp;</span></code>
+                            </div>
+                            <div class="bug-desc">What is missing at the end of the condition?</div>
+                            <div class="bug-options">
+                                <button class="bug-opt-btn" onclick="checkBug(3, false)">A semicolon (;)</button>
+                                <button class="bug-opt-btn" onclick="checkBug(3, true)">A colon (:) is missing at the
+                                    end!</button>
+                                <button class="bug-opt-btn" onclick="checkBug(3, false)">The word THEN</button>
+                            </div>
+                            <div class="bug-feedback" id="bugFeedback3"></div>
+                        </div>
+
+                        <div class="bug-item" data-fixed="false" id="bugItem4">
+                            <div class="bug-code">
+                                <span class="bug-tag">Bug 4:</span>
+                                <code>if number <span class="err-highlight">=&gt;</span> 10:</code>
+                            </div>
+                            <div class="bug-desc">What is wrong with the comparison operator?</div>
+                            <div class="bug-options">
+                                <button class="bug-opt-btn" onclick="checkBug(4, true)">The operator parts are the wrong
+                                    way around &mdash; it must be &gt;=, not =&gt;!</button>
+                                <button class="bug-opt-btn" onclick="checkBug(4, false)">Needs to be written as
+                                    =gt=</button>
+                                <button class="bug-opt-btn" onclick="checkBug(4, false)">Cannot compare numbers</button>
+                            </div>
+                            <div class="bug-feedback" id="bugFeedback4"></div>
+                        </div>
+
+                        <div class="bug-item" data-fixed="false" id="bugItem5">
+                            <div class="bug-code">
+                                <span class="bug-tag">Bug 5:</span>
+                                <code>else <span class="err-highlight">score &lt; 50</span>:</code>
+                            </div>
+                            <div class="bug-desc">What is wrong with this else statement?</div>
+                            <div class="bug-options">
+                                <button class="bug-opt-btn" onclick="checkBug(5, true)">An 'else' statement must NEVER have a condition after it!</button>
+                                <button class="bug-opt-btn" onclick="checkBug(5, false)">Should be spelled ELSEIF</button>
+                                <button class="bug-opt-btn" onclick="checkBug(5, false)">Needs parentheses around the variable</button>
+                            </div>
+                            <div class="bug-feedback" id="bugFeedback5"></div>
+                        </div>
+
+                        <div class="bug-item" data-fixed="false" id="bugItem6">
+                            <div class="bug-code">
+                                <span class="bug-tag">Bug 6:</span>
+                                <code>else<span class="err-highlight">&nbsp;</span> print("Try again")</code>
+                            </div>
+                            <div class="bug-desc">What is missing after the keyword 'else'?</div>
+                            <div class="bug-options">
+                                <button class="bug-opt-btn" onclick="checkBug(6, true)">A colon (:) is missing after 'else', and print() must be on an indented new line!</button>
+                                <button class="bug-opt-btn" onclick="checkBug(6, false)">An equals sign (=)</button>
+                                <button class="bug-opt-btn" onclick="checkBug(6, false)">The keyword THEN</button>
+                            </div>
+                            <div class="bug-feedback" id="bugFeedback6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 5: LIVE PYTHON CODE LAB & TESTING               -->
+        <!-- ======================================================== -->
+        <section id="code-lab" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-cyan">Learning Goal 5</span>
+                <span class="textbook-ref">Ref: Tasks 1.8, 1.9 &amp; Examples</span>
+            </div>
+            <h2 class="section-heading">Write &amp; Test Python IF &amp; IF/ELSE Statements</h2>
+            <p class="section-lead">
+                Now it's your turn to be the programmer! Test real Grade 8 single-branch IF and two-way IF/ELSE programs
+                inside our interactive simulator.
+            </p>
+
+            <div class="code-lab-container glass-panel">
+                <!-- Preset Challenge Selector Tabs -->
+                <div class="preset-section-row">
+                    <div class="preset-group">
+                        <span class="preset-group-tag tag-single">Single IF (1-Way):</span>
+                        <button class="tab-btn active" data-preset="quiz" onclick="loadPreset('quiz')">
+                            🎨 Color Quiz
+                        </button>
+                        <button class="tab-btn" data-preset="coaster" onclick="loadPreset('coaster')">
+                            🎢 Roller Coaster Height
+                        </button>
+                        <button class="tab-btn" data-preset="discount" onclick="loadPreset('discount')">
+                            🏷️ Bulk Discount
+                        </button>
+                        <button class="tab-btn" data-preset="joke" onclick="loadPreset('joke')">
+                            🤖 Robot Joke
+                        </button>
+                    </div>
+                    <div class="preset-group">
+                        <span class="preset-group-tag tag-dual">IF / ELSE (2-Way):</span>
+                        <button class="tab-btn" data-preset="exam" onclick="loadPreset('exam')">
+                            🎓 Exam Pass / Fail
+                        </button>
+                        <button class="tab-btn" data-preset="evenodd" onclick="loadPreset('evenodd')">
+                            🔢 Even or Odd
+                        </button>
+                        <button class="tab-btn" data-preset="ticket" onclick="loadPreset('ticket')">
+                            🎟️ Theme Park Ticket
+                        </button>
+                        <button class="tab-btn" data-preset="secret" onclick="loadPreset('secret')">
+                            🔐 Security Password
+                        </button>
+                    </div>
+                </div>
+
+                <div class="code-lab-grid">
+                    <!-- Editor Pane -->
+                    <div class="lab-editor-pane">
+                        <div class="pane-header">
+                            <div class="pane-title">
+                                <span class="py-icon">🐍</span>
+                                <span id="currentFileName">color_quiz.py</span>
+                            </div>
+                            <div class="editor-badge" id="editorModeBadge">Python 3 Mode (Single IF)</div>
+                        </div>
+
+                        <div class="code-editor-area">
+                            <textarea id="pythonEditor" class="code-textarea" spellcheck="false"></textarea>
+                        </div>
+
+                        <!-- Live Variable Input Panel -->
+                        <div class="input-prompt-box" id="inputPromptBox">
+                            <div class="prompt-header">
+                                <span class="prompt-icon">💬</span>
+                                <label for="liveUserInput" id="liveInputPromptText">Enter your test value for
+                                    input():</label>
+                            </div>
+                            <div class="prompt-input-row">
+                                <input type="text" id="liveUserInput" value="purple" class="styled-input">
+                                <button id="btnRunCode" class="btn-primary run-btn">
+                                    <span>▶ Run Code</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Output Pane -->
+                    <div class="lab-terminal-pane">
+                        <div class="pane-header">
+                            <div class="pane-title">
+                                <span class="term-dot dot-red"></span>
+                                <span class="term-dot dot-yellow"></span>
+                                <span class="term-dot dot-green"></span>
+                                <span class="term-title">Console Output &amp; Trace</span>
+                            </div>
+                            <button class="clear-btn" onclick="clearTerminal()">Clear</button>
+                        </div>
+
+                        <div class="terminal-screen" id="terminalScreen">
+                            <div class="term-line term-system">Welcome to the Grade 8 Python Simulator!</div>
+                            <div class="term-line term-system">Click "▶ Run Code" to execute.</div>
+                        </div>
+
+                        <!-- Execution Trace Box -->
+                        <div class="trace-status-panel" id="traceStatusPanel">
+                            <div class="trace-row">
+                                <span class="trace-label">Condition Evaluated:</span>
+                                <span class="trace-val" id="traceCond">colour == "purple"</span>
+                            </div>
+                            <div class="trace-row">
+                                <span class="trace-label">Result:</span>
+                                <span class="trace-val badge-val" id="traceBool">True</span>
+                            </div>
+                            <div class="trace-row">
+                                <span class="trace-label">Branch Action:</span>
+                                <span class="trace-val" id="traceAction">Indented print() ran!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- SECTION 6: CHECK YOUR PROGRESS / QUIZ                    -->
+        <!-- ======================================================== -->
+        <section id="quiz" class="lesson-section">
+            <div class="section-tag-row">
+                <span class="section-tag tag-pink">Check Your Progress</span>
+                <span class="textbook-ref">Ref: Check Your Progress &amp; Summary</span>
+            </div>
+            <h2 class="section-heading">Grade 8 Knowledge Challenge: IF &amp; IF/ELSE</h2>
+            <p class="section-lead">
+                Test your mastery of single-branch IF and dual-branch IF/ELSE statements across pseudocode, operators,
+                and Python syntax!
+            </p>
+
+            <div class="quiz-wrapper glass-panel">
+                <div class="quiz-header-bar">
+                    <div class="quiz-progress-text">
+                        Question <span id="currentQNum">1</span> of 7
+                    </div>
+                    <div class="quiz-score-badge">
+                        Score: <span id="currentScore">0</span> / 7
+                    </div>
+                </div>
+                <div class="quiz-progress-track">
+                    <div class="quiz-progress-fill" id="quizProgressFill" style="width: 14%;"></div>
+                </div>
+
+                <div class="quiz-body" id="quizBody">
+                    <!-- Populated dynamically by script.js -->
+                </div>
+            </div>
+
+            <!-- Summary Checklist Card (Exact from Textbook) -->
+            <div class="summary-checklist-card glass-panel" style="margin-top: 2.5rem;">
+                <div class="checklist-header">
+                    <span class="checklist-icon">📋</span>
+                    <div>
+                        <h3>Grade 8 Topic Summary Checklist</h3>
+                        <p>Tick each goal once you feel confident!</p>
+                    </div>
+                </div>
+                <div class="checklist-grid">
+                    <label class="check-item">
+                        <input type="checkbox" id="chk1" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="check-text">I can explain the difference between one-way (IF) and two-way (IF/ELSE) selection.</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk2" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="check-text">I can define IF / THEN and IF / THEN / ELSE in pseudocode using IF, THEN, ELSE, and ENDIF.</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk3" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="check-text">I can identify and use comparison operators (==, !=, &gt;, &lt;, &gt;=, &lt;=).</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk4" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="check-text">I can translate an IF / ELSE statement from pseudocode into Python syntax.</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk5" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="check-text">I know that Python's 'else:' never takes a condition and requires a colon and indentation.</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk6" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="check-text">I can write, trace, predict, and test both single-branch and dual-branch Python if/else statements.</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="brand-badge">Ihsan Schools</span>
+                <p>Future Explorers &bull; Grade 8 ICT Curriculum &bull; Semester 1</p>
+            </div>
+            <p class="footer-note">Grade 8 Students mastering Computational Thinking &amp; Text-Based Programming.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
